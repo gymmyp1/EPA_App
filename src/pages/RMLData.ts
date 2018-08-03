@@ -47,11 +47,13 @@ export class RMLData {
   private initializeChemicals() : void {
     // build map
     let i:number = 0;
-    for (let row of this.csvData){
-      this._chemicalNames.push(row[0]);
-      //console.log("Chem Name: " + row[0]);
-      this._myMap[row[0]] = i;
-      i++;
+    for (let row of this.csvData) {
+      if(row[0] != "") { //to keep the infamous empty checkbox from appearing at the end of the list
+        this._chemicalNames.push(row[0]);
+        //console.log("Chem Name: " + row[0]);
+        this._myMap[row[0]] = i;
+        i++;
+      }
     }
     for (let row of this.csvData) {
       for (let i = 2; i<9; i= i+2)
