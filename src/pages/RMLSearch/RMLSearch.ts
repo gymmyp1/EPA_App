@@ -1,6 +1,6 @@
 /****************************************************************
-* This is the newer version of chemSelect. It links to subdirectories
-* in chemSelect for simplicity.
+* This is where you pick which chemicals you are interested in.
+*
 *
 *
 ***************************************************************/
@@ -109,6 +109,7 @@ export class RMLSearchPage {
     this.data.clearTargetRiskHazard();
     this.data.clearScenario();
     this.data.clearExposureRoutes();
+    this.items = this.data.getChemicalNames(); //in case they are in a search
 
       //Check if at least one box is checked before moving on
     for (let item of this.items) {
@@ -142,6 +143,7 @@ export class RMLSearchPage {
   goToOtherPage() {
     var oneChecked: boolean = false;
     this.data.resetSelectedChemicals();
+    this.items = this.data.getChemicalNames(); //in case they are in a search
 
     //Check if at least one box is checked before moving on
     for (let item of this.items) {

@@ -43,37 +43,42 @@ export class TutorialPage {
     },
     {
       title: "RML/RSL Search",
-      description: "Choose which chemicals you want to retieve screening levels for. You may also use the searchbar to find specific chemicals. Click next to proceed.",
+      description: "Choose which chemicals you want to retieve screening levels for. You may also use the searchbar to find specific chemicals. Tap next to proceed.",
       image: "assets/img/chemicals.png",
     },
     {
       title: "Select Hazard Quotient and Target Risk",
-      description: "Select one or both of the options. Click Next.",
+      description: "Select your desired hazard quotient and target risk. RSL Search will present different values than RML Search. Tap Next.",
       image: "assets/img/hazard.png",
     },
     {
       title: "Select Scenario",
-      description: "Select one or both of the options. Click Next.",
+      description: "Select one or both scenarios, then tap Next.",
       image: "assets/img/scenario.png",
     },
     {
-      title: "Select Exposure Routes",
-      description: "Select one or more of the options. Click Next to see your results.",
+      title: "Select Media",
+      description: "Select one or more media. Options will change dynamically depending on the selected scenario. Tap Next to see your results.",
       image: "assets/img/exposure.png",
     },
     {
       title: "Results",
-      description: "Here, you will see your requested information on a <b>chemical card</b>. To retrieve all available information for that chemical, click More Information at the bottom of the card. To favorite the chemical's information, tap the star. If you favorite a chemical card of a chemical that is already in your favorites, then the favorite card will be overwritten.",
+      description: "Results are displayed on a <b>chemical card</b>. To retrieve all available information for that chemical, click More Information at the bottom of the card. To favorite the chemical's information, tap the star.",
       image: "assets/img/results.png",
     },
     {
       title: "Favorites",
-      description: "<b>Favorites</b> allows you to quickly view previously retrieved chemicals. Use the side menu (top left of any of the main menus) to navigate to your favorites.",
+      description: "<b>Favorites</b> allows you to quickly view previously retrieved chemicals. Use the side menu to navigate to your favorites.",
       image: "assets/img/favorite.png",
     },
     {
+      title: "Overwrite Favorites",
+      description: "If you favorite a chemical card of a chemical that is already in your favorites, the existing favorite will be <b>overwritten</b>.",
+      image: "assets/img/alert.png",
+    },
+    {
       title: "Recent Search",
-      description: "The results of your most recent RML/RSL Search will appear here.",
+      description: "The results of your most recent RML/RSL Search will appear here. The list will be reset each time you retrieve results from RSL or RML Search.",
       image: "assets/img/doge.jpg",
     }
   ];
