@@ -1,6 +1,6 @@
 page-start {
   h1 {
-    font-size: 16pt;
+    font-size: 13pt;
     white-space: normal;
   }
   h2 {
@@ -20,5 +20,8 @@ page-start {
       //background-repeat: no-repeat;
       //background-size: 100% 80%;
       //background-position: right bottom;
+  }
+  ion-title {
+    color: #d3fcff;
   }
 }

@@ -2,21 +2,21 @@
   <ion-navbar>
     <ion-title>
       <h1>
-        EPA RSL/RML Screening Level Search App
+        EPA RSL/RML Search
       </h1>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <h1> Select Screening Type</h1>
-
-    <ion-list *ngFor="let item of items">
-      <ion-item (click)="toggleCheckboxes(item)">
+  <h1> Select Hazard Quotient and Target Risk</h1>
+  <ion-list *ngFor="let item of items">
+    <ion-item (click)="toggleCheckboxes(item)">
+      <ion-label class = "fit">
         <ion-icon name={{getIcon(item)}}> {{item}}</ion-icon>
-      </ion-item>
-    </ion-list>
-
+       </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 <ion-footer>

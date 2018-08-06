@@ -6,7 +6,7 @@
 
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { ChemicalContainer } from '../../../../../../Chemical_Container';
+import { ChemicalContainer } from '../../../../Chemical_Container';
 import { ChemDetailsPage } from './chemDetails/chemDetails';
 
 @Component({

@@ -4,29 +4,58 @@
 ******************************************************************/
 
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, Platform, ToastController } from 'ionic-angular';
 import { ChemicalContainer } from '../Chemical_Container';
 import { FavDetailsPage } from '../favorites/favDetails/favDetails';
 import { HTTP } from '@ionic-native/http';
 import { File } from '@ionic-native/file';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { SQLite } from '@ionic-native/sqlite';
-
 
 @Component({
   selector: 'page-RecentPage',
   templateUrl: 'recent.html'
 })
 export class RecentPage {
+  public counter = 0; //for handling back button
+
   items;
   buttonIcon:string[] = [];
   data: ChemicalContainer;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HTTP, private file:File,private sqlite: SQLite,private loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HTTP, private file:File,private sqlite: SQLite,private loadingCtrl: LoadingController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public toastCtrl: ToastController) {
+    //For warning if they press back button
+    platform.ready().then(() => {
+      statusBar.styleDefault();
+      splashScreen.hide();
+
+      platform.registerBackButtonAction(() => {
+        if (this.counter == 0) {
+          this.counter++;
+          this.presentToast();
+          setTimeout(() => { this.counter = 0 }, 3000)
+        } else {
+          // console.log("exitapp");
+          platform.exitApp();
+        }
+      }, 0)
+    });
+
     this.data = new ChemicalContainer(this.http, this.file, this.sqlite);
     this.data.loadRecents();
     this.initializeItems();
   }
 
+  //for handling back button
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: "Press again to exit",
+      duration: 3000,
+      position: "bottom"
+    });
+    toast.present();
+  }
 
   goToNextPage(chemical:string) : void {
     this.navCtrl.push(FavDetailsPage, {

@@ -7,20 +7,23 @@
 ***********************************************************/
 
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, ToastController, LoadingController, Platform } from 'ionic-angular';
 import { ChemicalContainer } from '../Chemical_Container';
 import { FavDetailsPage } from './favDetails/favDetails';
 import { HTTP } from '@ionic-native/http';
 import { File } from '@ionic-native/file';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { SQLite } from '@ionic-native/sqlite';
 import { StartPage } from '../start/start';
-
 
 @Component({
   selector: 'page-FavoritesPage',
   templateUrl: 'favorites.html'
 })
 export class FavoritesPage {
+  public counter = 0; //for handling back button
+
   items;
   buttonIcon:string[] = [];
   selectedChemicalsCopy:string[] = [];
@@ -28,12 +31,39 @@ export class FavoritesPage {
 
   // The page constructors get package information automatically that then needs to be sent to chemical container so
   // it can have the same references
-  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HTTP, private file:File,private sqlite: SQLite, private toastCtrl: ToastController,private loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HTTP, private file:File,private sqlite: SQLite, private toastCtrl: ToastController,private loadingCtrl: LoadingController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     // http is not really used.
+    //For warning if they press back button
+    platform.ready().then(() => {
+      statusBar.styleDefault();
+      splashScreen.hide();
+
+      platform.registerBackButtonAction(() => {
+        if (this.counter == 0) {
+          this.counter++;
+          this.presentToast();
+          setTimeout(() => { this.counter = 0 }, 3000)
+        } else {
+          // console.log("exitapp");
+          platform.exitApp();
+        }
+      }, 0)
+    });
+
     this.data = new ChemicalContainer(this.http, this.file, this.sqlite);
     this.data.loadFavorites(); // the database takes a moment to load so do it first
     this.initializeItems();
 
+  }
+
+  //for handling back button
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: "Press again to exit",
+      duration: 3000,
+      position: "bottom"
+    });
+    toast.present();
   }
 
   showToast (): void {
@@ -50,8 +80,8 @@ export class FavoritesPage {
       this.data.deleteFavorite(item);
     }
     this.showToast();
-    //kick them out of the page
-    this.navCtrl.setRoot(StartPage,{});
+    //reload the page
+    this.navCtrl.setRoot(FavoritesPage,{});
   }
 
   goToNextPage(chemical:string) : void {
@@ -84,6 +114,10 @@ export class FavoritesPage {
     for (let item of this.items) {
       this.buttonIcon[item] = 'star';
     }
+  }
+
+  refresh() {
+    this.navCtrl.setRoot(FavoritesPage,{});
   }
 
   toggleFavorite(chemical:string):void {

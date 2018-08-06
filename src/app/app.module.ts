@@ -24,13 +24,11 @@ import { StartPage } from '../pages/start/start';
 import { RSLSearchPage } from '../pages/RSLSearch/RSLSearch';
 import { RMLSearchPage } from '../pages/RMLSearch/RMLSearch';
 
-import { ChemSelectPage } from '../pages/chemSelect/chemSelect';
-import { TargetRiskHazardPage } from '../pages/chemSelect/screeningType/targetRiskHazard/targetRiskHazard';
-import { ScreeningTypePage } from '../pages/chemSelect/screeningType/screeningType';
-import { ScenarioPage } from '../pages/chemSelect/screeningType/targetRiskHazard/scenario/scenario';
-import { ExposureRoutesPage } from '../pages/chemSelect/screeningType/targetRiskHazard/scenario/exposureRoutes/exposureRoutes';
-import { CardsPage } from '../pages/chemSelect/screeningType/targetRiskHazard/scenario/exposureRoutes/cards/cards';
-import { ChemDetailsPage } from '../pages/chemSelect/screeningType/targetRiskHazard/scenario/exposureRoutes/cards/chemDetails/chemDetails';
+import { TargetRiskHazardPage } from '../pages/targetRiskHazard/targetRiskHazard';
+import { ScenarioPage } from '../pages/targetRiskHazard/scenario/scenario';
+import { ExposureRoutesPage } from '../pages/targetRiskHazard/scenario/exposureRoutes/exposureRoutes';
+import { CardsPage } from '../pages/targetRiskHazard/scenario/exposureRoutes/cards/cards';
+import { ChemDetailsPage } from '../pages/targetRiskHazard/scenario/exposureRoutes/cards/chemDetails/chemDetails';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { FavDetailsPage } from '../pages/favorites/favDetails/favDetails';
 import { KeyPage } from '../pages/key/key';
@@ -54,9 +52,7 @@ import { Toast } from '@ionic-native/toast';
     ContactPage,
     HomePage,
     TabsPage,
-    ChemSelectPage,
     TargetRiskHazardPage,
-    ScreeningTypePage,
     ScenarioPage,
     ExposureRoutesPage,
     CardsPage,
@@ -85,8 +81,6 @@ import { Toast } from '@ionic-native/toast';
     ContactPage,
     HomePage,
     TabsPage ,
-    ChemSelectPage,
-    ScreeningTypePage,
     TargetRiskHazardPage,
     ScenarioPage,
     ExposureRoutesPage,

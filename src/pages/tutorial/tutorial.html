@@ -1,13 +1,16 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+      </button>
     <ion-title>Tutorial</ion-title>
+    <ion-buttons end class="skip_button">
+      <button ion-button clear color="primary" (click)="goToOtherPage()">Skip Tutorial</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="tutorial-page">
-  <ion-buttons end>
-    <button ion-button clear color="primary" (click)="goToOtherPage()">Skip Tutorial</button>
-  </ion-buttons>
 
   <ion-slides pager>
     <ion-slide *ngFor="let slide of slides">

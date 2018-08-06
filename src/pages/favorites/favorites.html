@@ -5,7 +5,7 @@
     </button>
     <ion-title>
       <h1>
-        EPA RSL/RML Screening Level Search App
+        EPA RSL/RML Search
       </h1>
     </ion-title>
   </ion-navbar>
@@ -16,6 +16,9 @@
   <button ion-button (click)= "clearFavorites()">
     <ion-icon name="trash" size="large"></ion-icon>
     Clear All Favorites
+  </button>
+  <button ion-button (click)= "refresh()">
+    Refresh
   </button>
 
   <ion-card *ngFor="let item of items">

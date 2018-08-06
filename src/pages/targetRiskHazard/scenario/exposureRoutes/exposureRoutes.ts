@@ -1,27 +1,25 @@
-/********************************************************
-* This was the first iteration, and is no longer used.
-* It is too much work to delete so it remains for now.
-* New version is RML and RSL search.
-*******************************************************/
-
+/***************************************************************
+* Get exposure routes from ChemicalContainer
+*
+**************************************************************/
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { ChemicalContainer } from '../../Chemical_Container';
-import { TargetRiskHazardPage } from './targetRiskHazard/targetRiskHazard';
+import { ChemicalContainer } from '../../../Chemical_Container';
+import { CardsPage } from './cards/cards';
 
 @Component({
-  selector: 'page-ScreeningTypePage',
-  templateUrl: 'screeningType.html'
+  selector: 'page-ExposureRoutesPage',
+  templateUrl: 'exposureRoutes.html'
 })
-export class ScreeningTypePage {
-  items:string[] = [];
-  checkboxes:boolean[] = [];
+export class ExposureRoutesPage {
+  items;
+  checkboxes = [];
   //Is at least one scenario picked?
-  oneChecked:boolean = false;
+  oneChecked = false;
   data : ChemicalContainer;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.data = navParams.get('data');
+    this.data = navParams.get('data'); // get ChemicalContainer
     this.initializeItems();
     this.initializeCheckboxes();
   }
@@ -46,16 +44,16 @@ export class ScreeningTypePage {
 
   goToOtherPage() {
     //Check if at least one box is checked before moving on
-    this.data.clearScreeningType();
+    this.data.clearExposureRoutes();
     for (let item of this.items) {
       if(this.checkboxes[item] == true) {
         this.oneChecked = true;
-        this.data.addScreeningType(item);
+        this.data.addExposureRoute(item); //push to ChemicalContainer
       }
     }
 
     if(this.oneChecked == true) {
-      this.navCtrl.push(TargetRiskHazardPage, {
+      this.navCtrl.push(CardsPage, {
         'data': this.data
       });
     } else {
@@ -63,7 +61,7 @@ export class ScreeningTypePage {
       }
   }
 
-  initializeItems() {
-    this.items = this.data.getScreeningTypeOptions();
+  initializeItems() :void {
+    this.items = this.data.getExposureRouteOptions();
   }
 }

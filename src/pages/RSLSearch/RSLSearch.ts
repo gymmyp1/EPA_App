@@ -1,24 +1,27 @@
 /****************************************************************
 * This is the newer version of chemSelect. It links to subdirectories
-* in chemSelect for simplicity.
+* in chemSelect.
 *
 *
 ***************************************************************/
 import { Component } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController, LoadingController, Platform, ToastController } from 'ionic-angular';
 import { HTTP } from '@ionic-native/http';
 import { ChemicalContainer} from '../Chemical_Container';
 import { File } from '@ionic-native/file';
 import { SQLite } from '@ionic-native/sqlite';
-import { TargetRiskHazardPage } from '../chemSelect/screeningType/targetRiskHazard/targetRiskHazard';
-import { CardsPage } from '../chemSelect/screeningType/targetRiskHazard/scenario/exposureRoutes/cards/cards';
-
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { TargetRiskHazardPage } from '../targetRiskHazard/targetRiskHazard';
+import { CardsPage } from '../targetRiskHazard/scenario/exposureRoutes/cards/cards';
 
 @Component({
   selector: 'page-RSLSearch',
   templateUrl: 'RSLSearch.html'
 })
 export class RSLSearchPage {
+  public counter = 0; //for handling back button
+
   items;
   checkboxes = [];
   searchTerm: string = '';
@@ -26,7 +29,24 @@ export class RSLSearchPage {
   searchToggled: boolean = false;
 
   // load all the packages we need to pass to ChemicalContainer
-  constructor(public navCtrl: NavController, private http: HTTP, private file:File,private sqlite: SQLite, private loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, private http: HTTP, private file:File,private sqlite: SQLite, private loadingCtrl: LoadingController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public toastCtrl: ToastController) {
+    //For warning if they press back button
+    platform.ready().then(() => {
+      statusBar.styleDefault();
+      splashScreen.hide();
+
+      platform.registerBackButtonAction(() => {
+        if (this.counter == 0) {
+          this.counter++;
+          this.presentToast();
+          setTimeout(() => { this.counter = 0 }, 3000)
+        } else {
+          // console.log("exitapp");
+          platform.exitApp();
+        }
+      }, 0)
+    });
+
     let loading = this.loadingCtrl.create({
       spinner: 'bubbles',
       duration: 100
@@ -43,6 +63,16 @@ export class RSLSearchPage {
     this.items = this.data.getChemicalNames();
     this.initializeCheckboxes();
     this.searchToggled = false;
+  }
+
+  //for handling back button
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: "Press again to exit",
+      duration: 3000,
+      position: "bottom"
+    });
+    toast.present();
   }
 
   initializeCheckboxes() {
