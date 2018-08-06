@@ -84,4 +84,4 @@ I don't think the above will work in browser, but might in emulator.
 I have created a Wiki page to test using Xcode and get your app on an Apple Device :)
 
 # Dependencies
-There's also a wiki page for dependencies for Mac and Windows.
+There's also a wiki page for dependencies for Mac and Linux.
