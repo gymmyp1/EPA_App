@@ -27,10 +27,14 @@ export class TabsPage {
   tab2Root = RSLSearchPage;
   tab3Root = RMLSearchPage;
   tab4Root = KeyPage;
-  myIndex:number;
+  myIndex = 0;  //to let you specify what tab you want to jump to
+
   constructor(navParams: NavParams) {
     // Set the active tab based on the passed index from menu.ts
-    this.myIndex = navParams.data.tabIndex || 0;
+   //not sure how the below line works... there's no menu.ts
+   //this.myIndex = navParams.data.tabIndex || 0;
+   //the line below may do the same thing as the line above...
+    this.myIndex = navParams.get('tabIndex');
   }
 
 }

@@ -37,17 +37,16 @@ export interface PageInterface {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage:any = StartPage;
-
+  
   pages: PageInterface[] = []
 
-  constructor(public platform: Platform,public statusBar: StatusBar,public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-
     this.pages = [
-      { title: 'Start', pageName: StartPage, icon: "apps" },
+      { title: 'Start', pageName: TabsPage, icon: "apps", index: 0 },
       { title: 'Favorites', pageName: FavoritesPage, icon: "star" },
-      { title: 'Home', pageName: HomePage, icon: "home", component: HomePage, index: 0 },
+      { title: 'Home', pageName: HomePage, icon: "home", component: HomePage },
       { title: 'RSL Search',pageName: TabsPage, icon: "search" ,component: RSLSearchPage, index: 1 },
       { title: 'RML Search',pageName: TabsPage, icon: "search", component: RMLSearchPage, index: 2 },
       { title: 'About', pageName: AboutPage, icon: "cog" },

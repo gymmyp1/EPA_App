@@ -2,9 +2,8 @@
 * Has buttons that link to pages. YAY
 *
 *******************************************************/
-
 import { Component } from '@angular/core';
-import { NavController, Platform, ToastController } from 'ionic-angular';
+import { NavController, Platform, ToastController, NavParams } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../home/home';
@@ -17,6 +16,7 @@ import { TutorialPage } from '../tutorial/tutorial';
 })
 
 export class StartPage {
+
   public counter = 0; //for handling back button
 
   constructor(public navCtrl: NavController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public toastCtrl: ToastController) {
@@ -51,13 +51,15 @@ export class StartPage {
   goHome() {
     this.navCtrl.setRoot(HomePage, {});
   }
-  goToRMLSearch() {
-
-    this.navCtrl.setRoot(TabsPage, { tabIndex: 2 });
-  }
   goToRSLSearch() {
-
-    this.navCtrl.setRoot(TabsPage, { tabIndex: 1 });
+    this.navCtrl.setRoot(TabsPage, {
+      'tabIndex': 1
+    });
+  }
+  goToRMLSearch() {
+    this.navCtrl.setRoot(TabsPage, {
+      'tabIndex': 2
+    });
   }
   goToTutorial() {
     this.navCtrl.setRoot(TutorialPage, { });
