@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ChemicalContainer } from '../Chemical_Container';
 import { ScenarioPage } from './scenario/scenario';
-
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-TargetRiskHazardPage',
@@ -63,6 +63,20 @@ export class TargetRiskHazardPage {
     } else {
         alert("Please select at least one option.");
       }
+  }
+
+  newSearch() {
+    //if they originally started from RSL search, go back to that search. Else, go
+    //to RML search.
+    if(this.data.getScreeningType()[0] === this.data.getScreeningTypeOptions()[0]) {
+      this.navCtrl.setRoot(TabsPage, {
+        'tabIndex': 1
+      });
+    } else {
+      this.navCtrl.setRoot(TabsPage, {
+        'tabIndex': 2
+      });
+    }
   }
 
   initializeItems() {
