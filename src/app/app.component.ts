@@ -36,8 +36,8 @@ export interface PageInterface {
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = StartPage;
-  
+  rootPage:any = TabsPage;
+
   pages: PageInterface[] = []
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {

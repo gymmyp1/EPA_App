@@ -9,6 +9,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StartPage } from '../start/start';
 
 @Component({
+  selector: 'page-TutorialPage',
   templateUrl: 'tutorial.html'
 })
 export class TutorialPage {
@@ -38,18 +39,18 @@ export class TutorialPage {
   slides = [
     {
       title: "Start Menu",
-      description: "From the <b>Start Menu</b>, you have the option to retrieve either RSL or RML Screening Levels. Click the Home icon or the sidebar menu for other information.",
+      description: "From the <b>Start Menu</b>, you have the option to retrieve either RSL or RML Screening Levels. Tap the Home icon, sidebar menu, or one of the tabs on the bottom for more information.",
       image: "assets/img/start.png",
     },
     {
       title: "RML/RSL Search",
-      description: "Choose which chemicals you want to retieve screening levels for. You may also use the searchbar to find specific chemicals. Tap next to proceed.",
-      image: "assets/img/chemicals.png",
+      description: "Choose which chemicals you want to retieve screening levels for. You may also use the searchbar to find specific chemicals. Tap Next to proceed or All Values to retrieve all available screening values.",
+      image: "assets/img/search.png",
     },
     {
       title: "Select Hazard Quotient and Target Risk",
       description: "Select your desired hazard quotient and target risk. RSL Search will present different values than RML Search. Tap Next.",
-      image: "assets/img/hazard.png",
+      image: "assets/img/targetrisk.png",
     },
     {
       title: "Select Scenario",
@@ -59,7 +60,7 @@ export class TutorialPage {
     {
       title: "Select Media",
       description: "Select one or more media. Options will change dynamically depending on the selected scenario. Tap Next to see your results.",
-      image: "assets/img/exposure.png",
+      image: "assets/img/media.png",
     },
     {
       title: "Results",
@@ -69,7 +70,7 @@ export class TutorialPage {
     {
       title: "Favorites",
       description: "<b>Favorites</b> allows you to quickly view previously retrieved chemicals. Use the side menu to navigate to your favorites.",
-      image: "assets/img/favorite.png",
+      image: "assets/img/favorites.png",
     },
     {
       title: "Overwrite Favorites",
@@ -78,8 +79,8 @@ export class TutorialPage {
     },
     {
       title: "Recent Search",
-      description: "The results of your most recent RML/RSL Search will appear here. The list will be reset each time you retrieve results from RSL or RML Search.",
-      image: "assets/img/doge.jpg",
+      description: "The results of your most recent RML/RSL Search will appear here. The list will be reset each time you retrieve results from RSL or RML Search. Access it from the side menu.",
+      image: "assets/img/recent.png",
     }
   ];
 
