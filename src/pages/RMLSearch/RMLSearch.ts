@@ -74,6 +74,7 @@ export class RMLSearchPage {
     });
     toast.present();
   }
+
   initializeItems () {
     this.items = this.data.getChemicalNameAndCasnum();
   }
@@ -124,6 +125,12 @@ export class RMLSearchPage {
       }
     }
 
+    let loading = this.loadingCtrl.create({
+      spinner: 'bubbles',
+      duration: 100
+    });
+    loading.present();
+
     //If everything's good, move on to the next page
     if(oneChecked == true) {
 
@@ -142,6 +149,7 @@ export class RMLSearchPage {
 
   goToOtherPage() {
     var oneChecked: boolean = false;
+
     this.data.resetSelectedChemicals();
     this.items = this.data.getChemicalNames(); //in case they are in a search
 
@@ -152,6 +160,12 @@ export class RMLSearchPage {
         this.data.addChemical(item);
       }
     }
+    
+    let loading = this.loadingCtrl.create({
+      spinner: 'bubbles',
+      duration: 100
+    });
+    loading.present();
 
     //If everything's good, move on to the next page
     if(oneChecked == true) {
@@ -179,6 +193,7 @@ export class RMLSearchPage {
       })
     }
   }
+
   cancelSearch(ev) {
     this.items = this.data.getChemicalNames();
     this.searchToggled = false;

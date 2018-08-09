@@ -44,7 +44,7 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Start', pageName: TabsPage, icon: "apps", index: 0 },
+      { title: 'Start', pageName: TabsPage, icon: "apps", component: StartPage, index: 0 },
       { title: 'Favorites', pageName: FavoritesPage, icon: "star" },
       { title: 'Home', pageName: HomePage, icon: "home", component: HomePage },
       { title: 'RSL Search',pageName: TabsPage, icon: "search" ,component: RSLSearchPage, index: 1 },
@@ -75,15 +75,16 @@ export class MyApp {
       params = { tabIndex: page.index };
     }
 
+    //Probably need to delete the commented out lines...
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     // The active child nav is our Tabs Navigation
-    if (this.nav.getActiveChildNav() && page.index != undefined) {
-      this.nav.getActiveChildNav().select(page.index);
-    } else {
+//    if (this.nav.getActiveChildNav() && page.index != undefined) {
+//      this.nav.getActiveChildNav().select(page.index);
+//    } else {
       // Tabs are not active, so reset the root page
       this.nav.setRoot(page.pageName, params);
-    }
+//    }
   }
 
 }

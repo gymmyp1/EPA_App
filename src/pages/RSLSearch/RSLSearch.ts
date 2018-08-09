@@ -105,7 +105,7 @@ export class RSLSearchPage {
     this.data.clearScenario();
     this.data.clearExposureRoutes();
     this.items = this.data.getChemicalNames(); //in case they are in a search
-    
+
       //Check if at least one box is checked before moving on
     for (let item of this.items) {
       if(this.checkboxes[item] == true) {
@@ -119,9 +119,14 @@ export class RSLSearchPage {
       }
     }
 
+    let loading = this.loadingCtrl.create({
+      spinner: 'bubbles',
+      duration: 100
+    });
+    loading.present();
+
     //If everything's good, move on to the next page
     if(oneChecked == true) {
-
      this.navCtrl.push(CardsPage, {
        'data': this.data
      });
@@ -147,6 +152,12 @@ export class RSLSearchPage {
         this.data.addChemical(item);
       }
     }
+
+    let loading = this.loadingCtrl.create({
+      spinner: 'bubbles',
+      duration: 100
+    });
+    loading.present();
 
     //If everything's good, move on to the next page
     if(oneChecked == true) {

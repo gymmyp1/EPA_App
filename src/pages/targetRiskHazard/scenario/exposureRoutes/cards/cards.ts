@@ -56,14 +56,10 @@ export class CardsPage {
   newSearch() {
     //if they originally started from RSL search, go back to that search. Else, go
     //to RML search.
-    if(this.data.getScreeningType()[0] ===  this.data.getScreeningTypeOptions()[0]) {
-      this.navCtrl.setRoot(TabsPage, {
-        'tabIndex': 1
-      });
+    if(this.data.getScreeningType()[0] === this.data.getScreeningTypeOptions()[0]) {
+      this.navCtrl.parent.select(1);
     } else {
-      this.navCtrl.setRoot(TabsPage, {
-        'tabIndex': 2
-      });
+      this.navCtrl.parent.select(2);
     }
   }
 

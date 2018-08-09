@@ -15,7 +15,6 @@ import { File } from '@ionic-native/file';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SQLite } from '@ionic-native/sqlite';
-import { StartPage } from '../start/start';
 
 @Component({
   selector: 'page-FavoritesPage',
