@@ -168,6 +168,10 @@ export class RSLSearchPage {
       alert("At least one chemical must be checked.");
    }
   }
+  
+  goHome() {
+    this.navCtrl.parent.select(0);
+  }
 
     // this is for the search bar
     getItems(ev) {
