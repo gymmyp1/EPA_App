@@ -1,10 +1,18 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
       <h1>
         EPA RSL/RML Search
       </h1>
     </ion-title>
+    <ion-buttons end class="go_home">
+      <button ion-button icon-only (click)= "goHome()">
+        <ion-icon name ="home"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 

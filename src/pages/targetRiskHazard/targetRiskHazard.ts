@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ChemicalContainer } from '../Chemical_Container';
 import { ScenarioPage } from './scenario/scenario';
-import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-TargetRiskHazardPage',
@@ -79,6 +78,10 @@ export class TargetRiskHazardPage {
     for (let item of this.items) {
       this.checkboxes[item] = true;
     }
+  }
+
+  goHome() {
+    this.navCtrl.parent.select(0);
   }
 
   initializeItems() {

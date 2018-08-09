@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ChemicalContainer } from '../../Chemical_Container';
 import { ExposureRoutesPage } from './exposureRoutes/exposureRoutes';
-import { TabsPage } from '../../tabs/tabs';
 
 @Component({
   selector: 'page-ScenarioPage',

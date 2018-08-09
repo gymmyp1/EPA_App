@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, Platform, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-about',
@@ -29,7 +29,11 @@ export class AboutPage {
       }, 0)
     });
   }
-  
+
+  goHome() {
+    this.navCtrl.setRoot(TabsPage, {});
+  }
+
   //for handling back button
   presentToast() {
     let toast = this.toastCtrl.create({

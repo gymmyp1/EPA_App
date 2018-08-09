@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ChemicalContainer } from '../../../Chemical_Container';
 import { CardsPage } from './cards/cards';
-import { TabsPage } from '../../../tabs/tabs';
 
 @Component({
   selector: 'page-ExposureRoutesPage',

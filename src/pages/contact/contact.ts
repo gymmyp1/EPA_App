@@ -9,6 +9,7 @@ import { NavController, Platform, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StaffPage } from './staff/staff';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-contact',
@@ -46,11 +47,15 @@ export class ContactPage {
     });
     toast.present();
   }
-  
+
   staffSelected(staffMember: string) {
     this.navCtrl.push(StaffPage, {
       'staffMember': staffMember,
       'staff' : this.fred
     });
+  }
+
+  goHome() {
+    this.navCtrl.setRoot(TabsPage, {});
   }
 }

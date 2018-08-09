@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -18,8 +19,6 @@ import { RMLInfoPage } from '../pages/info/RMLInfo/RMLInfo';
 import { WelcomePage } from '../pages/info/welcome/welcome';
 
 import { StaffPage } from '../pages/contact/staff/staff';
-
-import { StartPage } from '../pages/start/start';
 import { RSLSearchPage } from '../pages/RSLSearch/RSLSearch';
 import { RMLSearchPage } from '../pages/RMLSearch/RMLSearch';
 
@@ -47,6 +46,7 @@ import { Toast } from '@ionic-native/toast';
 @NgModule({
   declarations: [ // link all pages here
     MyApp,
+    HomePage,
     AboutPage,
     ContactPage,
     TabsPage,
@@ -65,7 +65,6 @@ import { Toast } from '@ionic-native/toast';
     KeyPage,
     RMLSearchPage,
     RSLSearchPage,
-    StartPage,
     TutorialPage,
     RecentPage
   ],
@@ -76,6 +75,7 @@ import { Toast } from '@ionic-native/toast';
   bootstrap: [IonicApp],
   entryComponents: [ // and here
     MyApp,
+    HomePage,
     AboutPage,
     ContactPage,
     TabsPage ,
@@ -94,7 +94,6 @@ import { Toast } from '@ionic-native/toast';
     KeyPage,
     RMLSearchPage,
     RSLSearchPage,
-    StartPage,
     TutorialPage,
     RecentPage
   ],

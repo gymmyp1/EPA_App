@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 import { NavController, Platform, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { StartPage } from '../start/start';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-TutorialPage',
@@ -105,6 +105,6 @@ export class TutorialPage {
   }
 
   goToOtherPage() {
-    this.navCtrl.setRoot(StartPage, {});
+    this.navCtrl.setRoot(TabsPage, {});
   }
 }

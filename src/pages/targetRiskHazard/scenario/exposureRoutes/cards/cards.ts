@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ChemicalContainer } from '../../../../Chemical_Container';
 import { ChemDetailsPage } from './chemDetails/chemDetails';
-import { TabsPage } from '../../../../tabs/tabs';
 
 @Component({
   selector: 'page-CardsPage',
@@ -65,5 +64,9 @@ export class CardsPage {
 
   getButtonIcon(chemical:string):string {
     return this.buttonIcon[chemical];
+  }
+
+  goHome() {
+    this.navCtrl.parent.select(0);
   }
 }

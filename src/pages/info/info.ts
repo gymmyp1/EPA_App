@@ -8,6 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { RMLInfoPage } from './RMLInfo/RMLInfo';
 import { RSLInfoPage } from './RSLInfo/RSLInfo';
 import { WelcomePage } from './welcome/welcome';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-info',
@@ -48,6 +49,10 @@ export class InfoPage {
   goToRSL () {
     this.navCtrl.push(RSLInfoPage, {
     });
+  }
+
+  goHome() {
+    this.navCtrl.setRoot(TabsPage, {});
   }
 
   //for handling back button

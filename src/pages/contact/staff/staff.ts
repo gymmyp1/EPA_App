@@ -80,5 +80,8 @@ export class StaffPage {
     this.staffDescription['Karessa Manning'] = 'Karessa coordinates the quality assurance/quality control (QA/QC) for calculator outputs, develops equations, and updates user guide text for the RAIS and supports 13 similar web-based tools for the US EPA spanning chemical and radiological risk issues. She updates and maintains current data for toxicity values and chemical parameters. Karessa graduated from the Univeristy of Tennessee, Knoxville with a B.S. in Geology and Environmental Studies.';
 
    }
-
+   
+   goHome() {
+      this.navCtrl.parent.select(0);
+    }
 }

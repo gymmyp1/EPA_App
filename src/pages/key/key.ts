@@ -32,6 +32,10 @@ export class KeyPage {
     });
   }
 
+  goHome() {
+    this.navCtrl.parent.select(0);
+  }
+
   //for handling back button
   presentToast() {
     let toast = this.toastCtrl.create({

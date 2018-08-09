@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ChemicalContainer } from '../../Chemical_Container';
+import { TabsPage } from '../../tabs/tabs';
 
 @Component({
   selector: 'page-FavDetailsPage',
@@ -21,5 +22,8 @@ export class FavDetailsPage {
   getAllFormattedData () : string[] {
     //console.log(this.chemical);
     return this.data.getAllFormattedData(this.chemical);
+  }
+  goHome() {
+    this.navCtrl.setRoot(TabsPage, {});
   }
 }

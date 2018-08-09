@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController, LoadingController, Platform } from 'ionic-angular';
 import { ChemicalContainer } from '../Chemical_Container';
 import { FavDetailsPage } from './favDetails/favDetails';
+import { TabsPage } from '../tabs/tabs';
 import { HTTP } from '@ionic-native/http';
 import { File } from '@ionic-native/file';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -135,4 +136,7 @@ export class FavoritesPage {
     return this.buttonIcon[chemical];
   }
 
+  goHome() {
+    this.navCtrl.setRoot(TabsPage, {});
+  }
 }

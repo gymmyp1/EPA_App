@@ -3,6 +3,11 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+    <ion-buttons end class="go_home">
+      <button ion-button icon-only (click)= "goHome()">
+        <ion-icon name ="home"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
       <h1>
         EPA RSL/RML Search
@@ -13,11 +18,11 @@
 
 <ion-content padding>
   <p>
-  For What's New, FAQ's, and User Guides, tap Welcome.
-  </p>
+  For What's New, FAQ's, and User Guides, tap the button below.
   <button ion-item (click)="goToWelcome()">
     Welcome
   </button>
+  </p>
   <p>
     For more information on the RSLs or RMLs click below.
   </p>
