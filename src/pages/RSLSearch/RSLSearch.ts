@@ -105,7 +105,7 @@ export class RSLSearchPage {
     this.data.clearScenario();
     this.data.clearExposureRoutes();
     this.items = this.data.getChemicalNames(); //in case they are in a search
-    
+
       //Check if at least one box is checked before moving on
     for (let item of this.items) {
       if(this.checkboxes[item] == true) {

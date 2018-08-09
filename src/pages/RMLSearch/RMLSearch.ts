@@ -142,6 +142,13 @@ export class RMLSearchPage {
 
   goToOtherPage() {
     var oneChecked: boolean = false;
+
+        let loading = this.loadingCtrl.create({
+          spinner: 'bubbles',
+          duration: 300
+        });
+        loading.present();
+
     this.data.resetSelectedChemicals();
     this.items = this.data.getChemicalNames(); //in case they are in a search
 
@@ -179,6 +186,7 @@ export class RMLSearchPage {
       })
     }
   }
+
   cancelSearch(ev) {
     this.items = this.data.getChemicalNames();
     this.searchToggled = false;

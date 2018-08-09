@@ -3,7 +3,7 @@
 *
 *******************************************************/
 import { Component } from '@angular/core';
-import { NavController, Platform, ToastController, NavParams } from 'ionic-angular';
+import { NavController, Platform, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../home/home';

@@ -6,6 +6,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ChemicalContainer } from '../../../../../Chemical_Container';
+import { TabsPage } from '../../../../../tabs/tabs';
 
 @Component({
   selector: 'page-ChemDetailsPage',
@@ -25,5 +26,19 @@ export class ChemDetailsPage {
   }
   getAllFormattedData () : string[] {
     return this.data.getAllFormattedData(this.chemical);
+  }
+
+  newSearch() {
+    //if they originally started from RSL search, go back to that search. Else, go
+    //to RML search.
+    if(this.data.getScreeningType()[0] === this.data.getScreeningTypeOptions()[0]) {
+      this.navCtrl.setRoot(TabsPage, {
+        'tabIndex': 1
+      });
+    } else {
+      this.navCtrl.setRoot(TabsPage, {
+        'tabIndex': 2
+      });
+    }
   }
 }

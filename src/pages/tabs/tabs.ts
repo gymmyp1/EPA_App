@@ -6,12 +6,6 @@
 
 import { Component } from '@angular/core';
 import { NavParams } from 'ionic-angular';
-
-//import { FavoritesPage } from '../favorites/favorites';
-//import { HomePage } from '../home/home';
-//import { AboutPage } from '../about/about';
-//import { InfoPage } from '../info/info';
-//import { ContactPage } from '../contact/contact';
 import { KeyPage } from '../key/key';
 import { RSLSearchPage } from '../RSLSearch/RSLSearch';
 import { RMLSearchPage } from '../RMLSearch/RMLSearch';

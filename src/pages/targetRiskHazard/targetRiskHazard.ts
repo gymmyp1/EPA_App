@@ -79,6 +79,12 @@ export class TargetRiskHazardPage {
     }
   }
 
+  checkAll() {
+    for (let item of this.items) {
+      this.checkboxes[item] = true;
+    }
+  }
+
   initializeItems() {
     this.items = this.data.getTargetRiskHazardOptions();
   }
