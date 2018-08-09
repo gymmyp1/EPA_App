@@ -12,14 +12,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { FavoritesPage } from '../pages/favorites/favorites';
-import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { InfoPage } from '../pages/info/info';
 import { ContactPage } from '../pages/contact/contact';
 import { KeyPage } from '../pages/key/key';
 import { RSLSearchPage } from '../pages/RSLSearch/RSLSearch';
 import { RMLSearchPage } from '../pages/RMLSearch/RMLSearch';
-import { StartPage } from '../pages/start/start';
+import { HomePage } from '../pages/home/home';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { RecentPage } from '../pages/recent/recent';
 
@@ -44,13 +43,12 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Start', pageName: TabsPage, icon: "apps", component: StartPage, index: 0 },
+      { title: 'Home', pageName: TabsPage, icon: "home", component: HomePage, index: 0 },
       { title: 'Favorites', pageName: FavoritesPage, icon: "star" },
-      { title: 'Home', pageName: HomePage, icon: "home", component: HomePage },
       { title: 'RSL Search',pageName: TabsPage, icon: "search" ,component: RSLSearchPage, index: 1 },
       { title: 'RML Search',pageName: TabsPage, icon: "search", component: RMLSearchPage, index: 2 },
       { title: 'About', pageName: AboutPage, icon: "cog" },
-      { title: 'Info', pageName: InfoPage, icon: "information-circle" },
+      { title: 'RSL/RML Info', pageName: InfoPage, icon: "information-circle" },
       { title: 'Contact Us', pageName: ContactPage, icon: "contact" },
       { title: 'Key', pageName: TabsPage, icon: "key", component: KeyPage, index: 3 },
       { title: 'Tutorial', pageName: TutorialPage, icon: "help" },

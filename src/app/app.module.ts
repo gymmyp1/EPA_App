@@ -10,13 +10,12 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { InfoPage } from '../pages/info/info';
 
 import { RSLInfoPage } from '../pages/info/RSLInfo/RSLInfo';
 import { RMLInfoPage } from '../pages/info/RMLInfo/RMLInfo';
-
+import { WelcomePage } from '../pages/info/welcome/welcome';
 
 import { StaffPage } from '../pages/contact/staff/staff';
 
@@ -50,7 +49,6 @@ import { Toast } from '@ionic-native/toast';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
     TabsPage,
     TargetRiskHazardPage,
     ScenarioPage,
@@ -61,6 +59,7 @@ import { Toast } from '@ionic-native/toast';
     InfoPage,
     RSLInfoPage,
     RMLInfoPage,
+    WelcomePage,
     FavoritesPage,
     FavDetailsPage,
     KeyPage,
@@ -79,7 +78,6 @@ import { Toast } from '@ionic-native/toast';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
     TabsPage ,
     TargetRiskHazardPage,
     ScenarioPage,
@@ -90,6 +88,7 @@ import { Toast } from '@ionic-native/toast';
     InfoPage,
     RSLInfoPage,
     RMLInfoPage,
+    WelcomePage,
     FavoritesPage,
     FavDetailsPage,
     KeyPage,

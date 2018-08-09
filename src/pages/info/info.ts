@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { RMLInfoPage } from './RMLInfo/RMLInfo';
 import { RSLInfoPage } from './RSLInfo/RSLInfo';
+import { WelcomePage } from './welcome/welcome';
 
 @Component({
   selector: 'page-info',
@@ -34,15 +35,18 @@ export class InfoPage {
     });
   }
 
+  goToWelcome() {
+    this.navCtrl.push(WelcomePage, {
+    });
+  }
+
   goToRML () {
     this.navCtrl.push(RMLInfoPage, {
-
     });
   }
 
   goToRSL () {
     this.navCtrl.push(RSLInfoPage, {
-
     });
   }
 

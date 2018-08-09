@@ -9,7 +9,7 @@ import { NavParams } from 'ionic-angular';
 import { KeyPage } from '../key/key';
 import { RSLSearchPage } from '../RSLSearch/RSLSearch';
 import { RMLSearchPage } from '../RMLSearch/RMLSearch';
-import { StartPage } from '../start/start';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-Tabs',
@@ -17,7 +17,7 @@ import { StartPage } from '../start/start';
 })
 export class TabsPage {
 
-  tab1Root = StartPage;
+  tab1Root = HomePage;
   tab2Root = RSLSearchPage;
   tab3Root = RMLSearchPage;
   tab4Root = KeyPage;

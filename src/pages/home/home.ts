@@ -1,18 +1,19 @@
-/******************************************
-* Where you go when you click Home icon
-******************************************/
-
+/*****************************************************
+* Has buttons that link to pages. YAY
+*
+*******************************************************/
 import { Component } from '@angular/core';
 import { NavController, Platform, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { TutorialPage } from '../tutorial/tutorial';
 
 @Component({
-  selector: 'page-home',
+  selector: 'page-HomePage',
   templateUrl: 'home.html'
 })
-export class HomePage {
 
+export class HomePage {
   public counter = 0; //for handling back button
 
   constructor(public navCtrl: NavController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public toastCtrl: ToastController) {
@@ -42,5 +43,16 @@ export class HomePage {
       position: "bottom"
     });
     toast.present();
+  }
+
+  goToRSLSearch() {
+    //bless people for sharing this line
+    this.navCtrl.parent.select(1);
+  }
+  goToRMLSearch() {
+    this.navCtrl.parent.select(2);
+  }
+  goToTutorial() {
+    this.navCtrl.setRoot(TutorialPage, { });
   }
 }
