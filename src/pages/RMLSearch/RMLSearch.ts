@@ -160,7 +160,7 @@ export class RMLSearchPage {
         this.data.addChemical(item);
       }
     }
-    
+
     let loading = this.loadingCtrl.create({
       spinner: 'bubbles',
       duration: 100
@@ -175,6 +175,10 @@ export class RMLSearchPage {
    } else {
       alert("At least one chemical must be checked.");
    }
+  }
+
+  goHome() {
+    this.navCtrl.parent.select(0);
   }
 
   // this is for the search bar
